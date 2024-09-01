@@ -1,16 +1,16 @@
 import React from 'react';
 import construction from '../assets/images/construction.jpg';
 
-const Project = ({section}) => {
+const Project = ({ section }) => {
     switch (section) {
         case 'about':
             return (
                 <section className="bg-white p-6 rounded-lg shadow-md">
                     <h2 className="text-3xl font-bold mb-4 text-gray-800">About Me</h2>
-                        <img src={construction} alt="Alec Taber" className="w-32 h-32 rounded-full mx-auto mb-4" />
-                            <p className="text-gray-700 text-lg">
-                                My name is Alec Taber, and I am a full-stack web developer. I have experience with HTML, CSS, JavaScript, and React on the front end, and Node.js, Express, and PostgreSQL on the back end. I am passionate about creating responsive, user-friendly web applications that are accessible to all users.
-                            </p>
+                    <img src={construction} alt="Alec Taber" className="w-32 h-32 rounded-full mx-auto mb-4" />
+                    <p className="text-gray-700 text-lg">
+                        My name is Alec Taber, and I am a full-stack web developer. I have experience with HTML, CSS, JavaScript, and React on the front end, and Node.js, Express, and PostgreSQL on the back end. I am passionate about creating responsive, user-friendly web applications that are accessible to all users.
+                    </p>
                 </section>
             );
         case 'portfolio':
@@ -43,7 +43,7 @@ const Project = ({section}) => {
                         </li>
 
                         <li className="border-b border-gray-200 pb-4">
-                        <img src={construction} alt="Project 1" className="w-full h-48 object-cover rounded-mb mb-4" />
+                            <img src={construction} alt="Project 1" className="w-full h-48 object-cover rounded-mb mb-4" />
                             <h3 className="text-2xl font-semibold text-gray-800">Project 2</h3>
                             <p className="text-gray-700">Description of Project 2</p>
                             <div className="flex space-x-4">
@@ -66,7 +66,7 @@ const Project = ({section}) => {
                             </div>
                         </li>
                         <li className="border-b border-gray-200 pb-4">
-                        <img src={construction} alt="Project 1" className="w-full h-48 object-cover rounded-mb mb-4" />
+                            <img src={construction} alt="Project 1" className="w-full h-48 object-cover rounded-mb mb-4" />
                             <h3 className="text-2xl font-semibold text-gray-800">Project 3</h3>
                             <p className="text-gray-700">Description of Project 3</p>
                             <div className="flex space-x-4">
@@ -107,16 +107,21 @@ const Project = ({section}) => {
                 <section className="bg-white p-6 rounded-lg shadow-md">
                     <h2 className="text-3xl font-bold mb-4 text-gray-800">Resume</h2>
                     <a href="resume.pdf" download className="inline-block bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700">Download Resume</a>
-                    <ul className="mt-4 space-y-2">
-                        {/* Add Skills here */}
+                    <ul className="mt-4 grid grid-cols-2 gap-4">
+                        <li className="text-gray-700">HTML & CSS</li>
+                        <li className="text-gray-700">JavaScript (ES6+)</li>
+                        <li className="text-gray-700">React.js</li>
+                        <li className="text-gray-700">Node.js</li>
+                        <li className="text-gray-700">PostgreSQL</li>
+                        <li className="text-gray-700">Git & GitHub</li>
                     </ul>
                 </section>
             );
-            default:
-                return <section className="bg-red-100 p-6 rounded-lg shadow-md">
-                    <h2 className="text-3xl font-bold mb-4 text-red-600">Error 404</h2>
-                    <p className="text-gray-700">Page Not Found</p>
-                </section>;
+        default:
+            return <section className="bg-red-100 p-6 rounded-lg shadow-md">
+                <h2 className="text-3xl font-bold mb-4 text-red-600">Error 404</h2>
+                <p className="text-gray-700">Page Not Found</p>
+            </section>;
     };
 };
 
@@ -135,7 +140,7 @@ const ContactForm = () => {
     };
 
     const handleBlur = (field) => {
-        const newErrors = {...errors};
+        const newErrors = { ...errors };
         if (!formData[field]) {
             newErrors[field] = 'This field is required';
         } else if (field === 'email' && !validateEmail(formData.email)) {
