@@ -274,7 +274,7 @@ const ContactForm = () => {
                 <textarea
                     id="message"
                     name="message"
-                    className={`mt-1 p-2 block w-full shadow-sm sm:text-sm border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md`}
+                    className={`mt-1 p-2 block w-full shadow-sm sm:text-sm border h-40 ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md`}
                     value={formData.message}
                     onChange={handleChange}
                     onBlur={() => handleBlur('message')}
