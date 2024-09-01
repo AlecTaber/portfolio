@@ -1,10 +1,10 @@
 import React from 'react';
-import Navigation from './Navigation';
+import Navigation from './Navigation.jsx';
 
 const Header = () => {
     return (
         <header>
-            <h1>Alec Taber</h1>
+            <h1 className='text-4xl text-blue-950'>Alec Taber</h1>
             <Navigation />
         </header>
     );
