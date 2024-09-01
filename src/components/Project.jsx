@@ -95,9 +95,11 @@ const Project = ({section}) => {
             return (
                 <section className="bg-white p-6 rounded-lg shadow-md">
                     <h2 className="text-3xl font-bold mb-4 text-gray-800">Contact</h2>
-                    <form className="space-y-4">
-                        {/* Add form elements here */}
-                    </form>
+                    <p className="text-gray-700">This form does not provide me with your inputted Name, Email, or Message yet. Please contact me via email.</p>
+                    <a href="mailto:alectaber12@gmail.com" className="text-blue-600 hover:underline">
+                        alectaber12@gmail.com
+                    </a>
+                    <ContactForm />
                 </section>
             );
         case 'resume':
@@ -116,6 +118,89 @@ const Project = ({section}) => {
                     <p className="text-gray-700">Page Not Found</p>
                 </section>;
     };
+};
+
+const ContactForm = () => {
+    const [formData, setFormData] = React.useState({
+        name: '',
+        email: '',
+        message: ''
+    });
+
+    const [errors, setErrors] = React.useState({});
+
+    const validateEmail = (email) => {
+        const re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    };
+
+    const handleBlur = (field) => {
+        const newErrors = {...errors};
+        if (!formData[field]) {
+            newErrors[field] = 'This field is required';
+        } else if (field === 'email' && !validateEmail(formData.email)) {
+            newErrors.email = 'Please enter a valid email address';
+        } else {
+            delete newErrors[field];
+        }
+        setErrors(newErrors);
+    };
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    return (
+        <form className="space-y-4">
+            <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className={`mt-1 p-2 block w-full shadow-sm sm:text-sm border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md`}
+                    value={formData.name}
+                    onChange={handleChange}
+                    onBlur={() => handleBlur('name')}
+                />
+                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+            </div>
+            <div>
+                <label htmlFor="email" className="block text-gray-700">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className={`mt-1 p-2 block w-full shadow-sm sm:text-sm border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md`}
+                    value={formData.email}
+                    onChange={handleChange}
+                    onBlur={() => handleBlur('email')}
+                />
+                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+            </div>
+            <div>
+                <label htmlFor="message" className="block text-gray-700">Message</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    className={`mt-1 p-2 block w-full shadow-sm sm:text-sm border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-md`}
+                    value={formData.message}
+                    onChange={handleChange}
+                    onBlur={() => handleBlur('message')}
+                />
+                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+            </div>
+            <button
+                type="submit"
+                className="bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700"
+            >
+                Submit
+            </button>
+        </form>
+    );
 };
 
 export default Project;
