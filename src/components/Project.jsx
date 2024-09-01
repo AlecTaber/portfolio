@@ -107,13 +107,96 @@ const Project = ({ section }) => {
                 <section className="bg-white p-6 rounded-lg shadow-md">
                     <h2 className="text-3xl font-bold mb-4 text-gray-800">Resume</h2>
                     <a href="resume.pdf" download className="inline-block bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700">Download Resume</a>
+                    <h3 className="text-2xl font-semibold text-gray-800 mt-4">Skills</h3>
                     <ul className="mt-4 grid grid-cols-2 gap-4">
-                        <li className="text-gray-700">HTML & CSS</li>
-                        <li className="text-gray-700">JavaScript (ES6+)</li>
-                        <li className="text-gray-700">React.js</li>
-                        <li className="text-gray-700">Node.js</li>
-                        <li className="text-gray-700">PostgreSQL</li>
-                        <li className="text-gray-700">Git & GitHub</li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            Problem Solving
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            Pseudocode
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            Command Line
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            Git & GitHub
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            HTML & CSS
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            Developer Tools
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            Bootstrap Framework
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            Tailwind CSS
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            JavaScript (ES6+)
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            JSON
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            Web API
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            Server Side API
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            Fetch
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            REST APIs
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            AJAX
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            Node.js
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            TypeScript
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            OOP
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            PostgreSQL
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            React.js
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            React Router
+                        </li>
+                        <li className="text-gray-700">
+                            <span className="text-blue-600">• </span>
+                            State Management
+                        </li>
                     </ul>
                 </section>
             );
