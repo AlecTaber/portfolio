@@ -8,7 +8,7 @@ const Project = ({ section }) => {
             return (
                 <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-md">
                     <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center">About Me</h2>
-                    <img src={construction} alt="Alec Taber" className="w-32 h-32 rounded-full mx-auto mb-4" />
+                    <img src={construction} alt="Alec Taber" className="w-32 h-32 rounded-full mx-auto mb-4 lg:w-64 lg:h-64" />
                     <p className="text-gray-700 text-lg">
                         My name is Alec Taber, and I am a full-stack web developer. I have experience with HTML, CSS, JavaScript, and React on the front end, and Node.js, Express, and PostgreSQL on the back end. I am passionate about creating responsive, user-friendly web applications that are accessible to all users.
                     </p>
@@ -17,74 +17,45 @@ const Project = ({ section }) => {
         case 'portfolio':
             return (
                 <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-md">
-                    <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center">Portfolio</h2>
-                    <ul className="space-y-4">
-                        <li className="border-b border-gray-200 pb-4">
-                            <img src={memoryGame} alt="Project 1" className="w-full h-48 object-cover rounded-mb mb-4" />
+                    <h2 className="text-3xl font-bold p-4 text-gray-800 text-center">Portfolio</h2>
+                    <ul className="lg:grid lg:grid-cols-3 lg:gap-4 space-y-4 lg:space-y-0">
+                        <li className="border-b border-gray-200 pb-4 flex flex-col h-full">
+                            <img src={memoryGame} alt="Project 1" className="w-full h-48 object-cover rounded-lg mb-4" />
                             <h3 className="text-2xl font-semibold text-gray-800">Memory Game</h3>
-                            <p className="text-gray-700">This is a description of Memory Game</p>
-                            <div className="flex space-x-4">
-                                <a
-                                    href="https://GitHub.com/AlecTaber/Memory-Game"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-600 hover:underline"
-                                >
+                            <p className="text-gray-700 flex-grow">This is a description of Memory Game</p>
+                            <div className="flex space-x-4 mt-auto">
+                                <a href="https://GitHub.com/AlecTaber/Memory-Game" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                     GitHub Repository
                                 </a>
-                                <a
-                                    href="https://alectaber.github.io/memory-game/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-600 hover:underline"
-                                >
+                                <a href="https://alectaber.github.io/memory-game/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                     Live Website
                                 </a>
                             </div>
                         </li>
 
-                        <li className="border-b border-gray-200 pb-4">
-                            <img src={construction} alt="Project 1" className="w-full h-48 object-cover rounded-mb mb-4" />
+                        <li className="border-b border-gray-200 pb-4 flex flex-col h-full">
+                            <img src={construction} alt="Project 2" className="w-full h-48 object-cover rounded-lg mb-4" />
                             <h3 className="text-2xl font-semibold text-gray-800">Project 2</h3>
-                            <p className="text-gray-700">Description of Project 2</p>
-                            <div className="flex space-x-4">
-                                <a
-                                    href="https://GitHub.com/AlecTaber"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-600 hover:underline"
-                                >
+                            <p className="text-gray-700 flex-grow">Description of Project 2</p>
+                            <div className="flex space-x-4 mt-auto">
+                                <a href="https://GitHub.com/AlecTaber" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                     GitHub Repository
                                 </a>
-                                <a
-                                    href="https://GitHub.com/AlecTaber"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-600 hover:underline"
-                                >
+                                <a href="https://GitHub.com/AlecTaber" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                     Live Website
                                 </a>
                             </div>
                         </li>
-                        <li className="border-b border-gray-200 pb-4">
-                            <img src={construction} alt="Project 1" className="w-full h-48 object-cover rounded-mb mb-4" />
+
+                        <li className="border-b border-gray-200 pb-4 flex flex-col h-full">
+                            <img src={construction} alt="Project 3" className="w-full h-48 object-cover rounded-lg mb-4" />
                             <h3 className="text-2xl font-semibold text-gray-800">Project 3</h3>
-                            <p className="text-gray-700">Description of Project 3</p>
-                            <div className="flex space-x-4">
-                                <a
-                                    href="https://GitHub.com/AlecTaber"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-600 hover:underline"
-                                >
+                            <p className="text-gray-700 flex-grow">Description of Project 3</p>
+                            <div className="flex space-x-4 mt-auto">
+                                <a href="https://GitHub.com/AlecTaber" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                     GitHub Repository
                                 </a>
-                                <a
-                                    href="https://GitHub.com/AlecTaber"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-600 hover:underline"
-                                >
+                                <a href="https://GitHub.com/AlecTaber" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                     Live Website
                                 </a>
                             </div>
@@ -109,7 +80,7 @@ const Project = ({ section }) => {
                     <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center">Resume</h2>
                     <a href="resume.pdf" download className="bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 absolute left-1/2 transform -translate-x-1/2">Download Resume</a>
                     <h3 className="text-3xl font-semibold text-gray-800 mt-4 ml-40 pt-10">Skills</h3>
-                    <ul className="mt-4 grid grid-cols-2 gap-4 ml-0 text-2xl lg:grid-cols-3 lg:ml-40">
+                    <ul className="mt-4 grid grid-cols-2 gap-4 ml-0 lg:grid-cols-3 lg:ml-40 lg:text-2xl">
                         <li className="text-gray-700">
                             <span className="text-purple-900">• </span>
                             Problem Solving
