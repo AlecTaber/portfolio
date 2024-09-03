@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
     return (
-        <nav className="bg-gray-800 text-white p-4">
+        <nav className="bg-gray-800 text-white p-4 dark:bg-purple-950">
             <ul className="flex space-x-4 justify-end">
                 <li>
                     <NavLink exact to="/" activeClassName = "active" className="hover:text-purple-300">About Me</NavLink>

@@ -11,7 +11,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="hover:underline"
                 >
-                    <AiFillGithub className="h-10 w-10"></AiFillGithub>
+                    <AiFillGithub className="h-10 w-10 dark:text-purple-300"></AiFillGithub>
                 </a>
                 <a
                     href="https://www.linkedin.com/in/alec-taber-11b963311"
@@ -19,7 +19,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="hover:underline"
                 >
-                    <AiFillLinkedin className="h-10 w-10"></AiFillLinkedin>
+                    <AiFillLinkedin className="h-10 w-10 dark:text-purple-300"></AiFillLinkedin>
                 </a>
                 <a
                     href="https://x.com/AlecTaber12"
@@ -27,11 +27,11 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="hover:underline"
                 >
-                    <AiFillTwitterCircle className="h-10 w-10"></AiFillTwitterCircle>
+                    <AiFillTwitterCircle className="h-10 w-10 dark:text-purple-300"></AiFillTwitterCircle>
                 </a>
 
             </div>
-            <p>&copy; 2024 Alec Taber</p>
+            <p className="dark:text-purple-300">&copy; 2024 Alec Taber</p>
         </footer>
     );
 };
