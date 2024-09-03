@@ -9,8 +9,17 @@ const Project = ({ section }) => {
                 <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-md">
                     <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center">About Me</h2>
                     <img src={construction} alt="Alec Taber" className="w-32 h-32 rounded-full mx-auto mb-4 lg:w-64 lg:h-64" />
-                    <p className="text-gray-700 text-lg">
-                        My name is Alec Taber, and I am a full-stack web developer. I have experience with HTML, CSS, JavaScript, and React on the front end, and Node.js, Express, and PostgreSQL on the back end. I am passionate about creating responsive, user-friendly web applications that are accessible to all users.
+                    <p className="text-gray-700 text-2xl ml-10 mr-10">
+                        Greetings, my name is Alec Taber.
+                    </p>
+                    <br />
+                    <p className="text-gray-700 text-2xl ml-10 mr-10">
+                        I am a native of the Great Pacific Northwest, having lived in picturesque Eastern Oregon for the past 25 years. I am an avid fan of all sports, amateur, collegiate and professional. A lifelong gamer, I am eager to embark on a career in the field of technology.
+                    </p>
+                    <br />
+                    <p className="text-gray-700 text-2xl ml-10 mr-10 pb-4">
+                        I am actively seeking a career creating responsive, user-friendly web applications that are accessible to all users. While I am looking for full-time employment, I am also willing to do freelance work in order to bolster my growing portfolio.
+
                     </p>
                 </section>
             );
