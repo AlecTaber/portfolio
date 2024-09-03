@@ -1,4 +1,5 @@
 import React from 'react';
+import {AiFillGithub, AiFillLinkedin, AiFillTwitterCircle} from 'react-icons/ai';
 
 const Footer = () => {
     return (
@@ -10,7 +11,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="hover:underline"
                 >
-                    GitHub
+                    <AiFillGithub className="h-10 w-10"></AiFillGithub>
                 </a>
                 <a
                     href="https://www.linkedin.com/in/alec-taber-11b963311"
@@ -18,15 +19,15 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     className="hover:underline"
                 >
-                    LinkedIn
+                    <AiFillLinkedin className="h-10 w-10"></AiFillLinkedin>
                 </a>
                 <a
-                    href="https://profile.indeed.com/p/alect-37w1b45"
+                    href="https://x.com/AlecTaber12"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:underline"
                 >
-                    Indeed
+                    <AiFillTwitterCircle className="h-10 w-10"></AiFillTwitterCircle>
                 </a>
 
             </div>

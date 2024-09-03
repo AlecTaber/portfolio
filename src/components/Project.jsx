@@ -1,37 +1,39 @@
 import React from 'react';
 import construction from '../assets/images/construction.jpg';
 import memoryGame from '../assets/images/Screenshot 2024-09-02 182026.png'
+import profile from '../assets/images/image0.jpeg';
 
 const Project = ({ section }) => {
     switch (section) {
         case 'about':
             return (
-                <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-md">
+                <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-lg">
                     <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center">About Me</h2>
-                    <img src={construction} alt="Alec Taber" className="w-32 h-32 rounded-full mx-auto mb-4 lg:w-64 lg:h-64" />
-                    <p className="text-gray-700 text-2xl ml-10 mr-10">
+                    <img src={profile} alt="Alec Taber" className="w-32 h-32 rounded-full mx-auto mb-4 lg:w-64 lg:h-64 shadow-xl" />
+                    <p className="text-gray-700 lg:text-2xl ml-10 mr-10">
                         Greetings, my name is Alec Taber.
                     </p>
                     <br />
-                    <p className="text-gray-700 text-2xl ml-10 mr-10">
+                    <p className="text-gray-700 lg:text-2xl ml-10 mr-10">
                         I am a native of the Great Pacific Northwest, having lived in picturesque Eastern Oregon for the past 25 years. I am an avid fan of all sports, amateur, collegiate and professional. A lifelong gamer, I am eager to embark on a career in the field of technology.
                     </p>
                     <br />
-                    <p className="text-gray-700 text-2xl ml-10 mr-10 pb-4">
+                    <p className="text-gray-700 lg:text-2xl ml-10 mr-10 pb-4">
                         I am actively seeking a career creating responsive, user-friendly web applications that are accessible to all users. While I am looking for full-time employment, I am also willing to do freelance work in order to bolster my growing portfolio.
 
                     </p>
                 </section>
             );
+
         case 'portfolio':
             return (
-                <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-md">
+                <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-lg">
                     <h2 className="text-3xl font-bold p-4 text-gray-800 text-center">Portfolio</h2>
                     <ul className="lg:grid lg:grid-cols-3 lg:gap-4 space-y-4 lg:space-y-0">
-                        <li className="border-b border-gray-200 pb-4 flex flex-col h-full">
-                            <img src={memoryGame} alt="Project 1" className="w-full h-48 object-cover rounded-lg mb-4" />
+                        <li className="pb-4 flex flex-col h-full bg-white rounded-lg shadow-lg p-4">
+                            <img src={memoryGame} alt="Project 1" className="w-full h-48 object-cover rounded-lg mb-4 shadow-xl border-2 border-black" />
                             <h3 className="text-2xl font-semibold text-gray-800">Memory Game</h3>
-                            <p className="text-gray-700 flex-grow">This is a description of Memory Game</p>
+                            <p className="text-gray-700 flex-grow">I collaborated with two other developers and created this Memory Card application using CSS, HTML, and JavaScript. This interactive game challenges users to match cards in groups of four by testing their memory skills. The game features a sleek, responsive design and dynamic animations, as well as user statistics that are kept in local stroage, providing an engaging user experience. The application is fully functional across various devices and browsers, showcasing my ability to build responsive, interactive web applications with clean and maintainable code.</p>
                             <div className="flex space-x-4 mt-auto">
                                 <a href="https://GitHub.com/AlecTaber/Memory-Game" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                     GitHub Repository
@@ -42,8 +44,8 @@ const Project = ({ section }) => {
                             </div>
                         </li>
 
-                        <li className="border-b border-gray-200 pb-4 flex flex-col h-full">
-                            <img src={construction} alt="Project 2" className="w-full h-48 object-cover rounded-lg mb-4" />
+                        <li className="pb-4 flex flex-col h-full bg-white rounded-lg shadow-lg p-4">
+                            <img src={construction} alt="Project 2" className="w-full h-48 object-cover rounded-lg mb-4 shadow-xl border-2 border-black" />
                             <h3 className="text-2xl font-semibold text-gray-800">Project 2</h3>
                             <p className="text-gray-700 flex-grow">Description of Project 2</p>
                             <div className="flex space-x-4 mt-auto">
@@ -56,8 +58,8 @@ const Project = ({ section }) => {
                             </div>
                         </li>
 
-                        <li className="border-b border-gray-200 pb-4 flex flex-col h-full">
-                            <img src={construction} alt="Project 3" className="w-full h-48 object-cover rounded-lg mb-4" />
+                        <li className="pb-4 flex flex-col h-full bg-white rounded-lg shadow-lg p-4">
+                            <img src={construction} alt="Project 3" className="w-full h-48 object-cover rounded-lg mb-4 shadow-xl border-2 border-black" />
                             <h3 className="text-2xl font-semibold text-gray-800">Project 3</h3>
                             <p className="text-gray-700 flex-grow">Description of Project 3</p>
                             <div className="flex space-x-4 mt-auto">
@@ -72,20 +74,22 @@ const Project = ({ section }) => {
                     </ul>
                 </section>
             );
+
         case 'contact':
             return (
-                <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-md">
+                <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-lg">
                     <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center">Contact</h2>
-                    <p className="text-gray-700">This form does not provide me with your inputted Name, Email, or Message yet. Please contact me via email.</p>
-                    <a href="mailto:alectaber12@gmail.com" className="text-blue-600 hover:underline">
-                        alectaber12@gmail.com
-                    </a>
+                    <p className="text-gray-700 pb-4">
+                        This form does not provide me with your inputted Name, Email, or Message yet. Please contact me via email at <a href="mailto:alectaber12@gmail.com" className="text-blue-600 hover:underline">
+                        alectaber12@gmail.com</a>.
+                    </p>
                     <ContactForm />
                 </section>
             );
+
         case 'resume':
             return (
-                <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-md">
+                <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-">
                     <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center">Resume</h2>
                     <a href="resume.pdf" download className="bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 absolute left-1/2 transform -translate-x-1/2">Download Resume</a>
                     <h3 className="text-3xl font-semibold text-gray-800 mt-4 pt-10 lg:ml-40">Skills</h3>
@@ -181,6 +185,7 @@ const Project = ({ section }) => {
                     </ul>
                 </section>
             );
+
         default:
             return <section className="bg-red-100 p-6 rounded-lg shadow-md">
                 <h2 className="text-3xl font-bold mb-4 text-red-600">Error 404</h2>
