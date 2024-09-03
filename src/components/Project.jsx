@@ -1,12 +1,13 @@
 import React from 'react';
 import construction from '../assets/images/construction.jpg';
+import memoryGame from '../assets/images/Screenshot 2024-09-02 182026.png'
 
 const Project = ({ section }) => {
     switch (section) {
         case 'about':
             return (
-                <section className="bg-white p-6 rounded-lg shadow-md">
-                    <h2 className="text-3xl font-bold mb-4 text-gray-800">About Me</h2>
+                <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-md">
+                    <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center">About Me</h2>
                     <img src={construction} alt="Alec Taber" className="w-32 h-32 rounded-full mx-auto mb-4" />
                     <p className="text-gray-700 text-lg">
                         My name is Alec Taber, and I am a full-stack web developer. I have experience with HTML, CSS, JavaScript, and React on the front end, and Node.js, Express, and PostgreSQL on the back end. I am passionate about creating responsive, user-friendly web applications that are accessible to all users.
@@ -15,13 +16,13 @@ const Project = ({ section }) => {
             );
         case 'portfolio':
             return (
-                <section className="bg-white p-g rounded-lg shadow-md">
-                    <h2 className="text-3xl font-bold mb-4 text-gray-800">Portfolio</h2>
+                <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-md">
+                    <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center">Portfolio</h2>
                     <ul className="space-y-4">
                         <li className="border-b border-gray-200 pb-4">
-                            <img src={construction} alt="Project 1" className="w-full h-48 object-cover rounded-mb mb-4" />
-                            <h3 className="text-2xl font-semibold text-gray-800">Project 1</h3>
-                            <p className="text-gray-700">Description of Project 1</p>
+                            <img src={memoryGame} alt="Project 1" className="w-full h-48 object-cover rounded-mb mb-4" />
+                            <h3 className="text-2xl font-semibold text-gray-800">Memory Game</h3>
+                            <p className="text-gray-700">This is a description of Memory Game</p>
                             <div className="flex space-x-4">
                                 <a
                                     href="https://GitHub.com/AlecTaber/Memory-Game"
@@ -93,8 +94,8 @@ const Project = ({ section }) => {
             );
         case 'contact':
             return (
-                <section className="bg-white p-6 rounded-lg shadow-md">
-                    <h2 className="text-3xl font-bold mb-4 text-gray-800">Contact</h2>
+                <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-md">
+                    <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center">Contact</h2>
                     <p className="text-gray-700">This form does not provide me with your inputted Name, Email, or Message yet. Please contact me via email.</p>
                     <a href="mailto:alectaber12@gmail.com" className="text-blue-600 hover:underline">
                         alectaber12@gmail.com
@@ -104,97 +105,97 @@ const Project = ({ section }) => {
             );
         case 'resume':
             return (
-                <section className="bg-white p-6 rounded-lg shadow-md">
-                    <h2 className="text-3xl font-bold mb-4 text-gray-800">Resume</h2>
-                    <a href="resume.pdf" download className="inline-block bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700">Download Resume</a>
-                    <h3 className="text-2xl font-semibold text-gray-800 mt-4">Skills</h3>
-                    <ul className="mt-4 grid grid-cols-2 gap-4">
+                <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-md">
+                    <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center">Resume</h2>
+                    <a href="resume.pdf" download className="bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 absolute left-1/2 transform -translate-x-1/2">Download Resume</a>
+                    <h3 className="text-3xl font-semibold text-gray-800 mt-4 ml-40 pt-10">Skills</h3>
+                    <ul className="mt-4 grid grid-cols-3 gap-4 ml-40 text-2xl">
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             Problem Solving
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             Pseudocode
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             Command Line
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             Git & GitHub
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             HTML & CSS
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             Developer Tools
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             Bootstrap Framework
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             Tailwind CSS
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             JavaScript (ES6+)
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             JSON
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             Web API
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             Server Side API
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             Fetch
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             REST APIs
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             AJAX
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             Node.js
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             TypeScript
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             OOP
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             PostgreSQL
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             React.js
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             React Router
                         </li>
                         <li className="text-gray-700">
-                            <span className="text-blue-600">• </span>
+                            <span className="text-purple-900">• </span>
                             State Management
                         </li>
                     </ul>
