@@ -79,7 +79,7 @@ const Project = ({ section }) => {
                 <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-md">
                     <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center">Resume</h2>
                     <a href="resume.pdf" download className="bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 absolute left-1/2 transform -translate-x-1/2">Download Resume</a>
-                    <h3 className="text-3xl font-semibold text-gray-800 mt-4 ml-40 pt-10">Skills</h3>
+                    <h3 className="text-3xl font-semibold text-gray-800 mt-4 pt-10 lg:ml-40">Skills</h3>
                     <ul className="mt-4 grid grid-cols-2 gap-4 ml-0 lg:grid-cols-3 lg:ml-40 lg:text-2xl">
                         <li className="text-gray-700">
                             <span className="text-purple-900">• </span>
