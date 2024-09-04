@@ -48,7 +48,7 @@ This portfolio was created by Alec Taber.
 
 ## Tests
 
-N/A
+Here is a link to the deployed application https://alec-tabers-portfolio.netlify.app/ 
 
 ## Contact
 
