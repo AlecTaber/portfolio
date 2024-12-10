@@ -11,7 +11,7 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
             onClick={toggleDarkMode}
             className="p-2 rounded-md"
           >
-            {isDarkMode ? <MdLightMode className="w-10 h-10 text-purple-300"/> : <MdDarkMode className="w-10 h-10 text-gray-800"/>}
+            {isDarkMode ? <MdLightMode className="w-10 h-10 text-purple-300 hover:text-purple-400"/> : <MdDarkMode className="w-10 h-10 text-gray-800 hover:text-gray-700"/>}
           </button>
         </div>
       </div>

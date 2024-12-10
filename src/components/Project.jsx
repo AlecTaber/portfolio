@@ -2,6 +2,8 @@ import React from 'react';
 import construction from '../assets/images/construction.jpg';
 import memoryGame from '../assets/images/Screenshot 2024-09-02 182026.png'
 import profile from '../assets/images/image0.jpeg';
+import rancidRhythms from '../assets/images/Screenshot 2024-09-24 181056.png';
+import loopLab from '../assets/images/Screenshot 2024-12-09 155154.png';
 
 const Project = ({ section }) => {
     switch (section) {
@@ -19,7 +21,7 @@ const Project = ({ section }) => {
                     </p>
                     <br />
                     <p className="text-gray-700 dark:text-gray-300 lg:text-2xl ml-10 mr-10 pb-4">
-                        I am actively seeking a career creating responsive, user-friendly web applications that are accessible to all users. While I am looking for full-time employment, I am also willing to do freelance work in order to bolster my growing portfolio.
+                        I am actively seeking a career creating responsive, user-friendly web applications that are accessible to all users. I have just completed a coding Bootcamp through the University of Oregon and edX. While I am looking for full-time employment, I am also willing to do freelance work in order to bolster my growing portfolio.
 
                     </p>
                 </section>
@@ -45,28 +47,28 @@ const Project = ({ section }) => {
                         </li>
 
                         <li className="pb-4 flex flex-col h-full bg-white dark:bg-gray-900 rounded-lg shadow-lg p-4">
-                            <img src={construction} alt="Project 2" className="w-full h-48 object-cover rounded-lg mb-4 shadow-xl border-2 border-black dark:border-purple-300 dark:shadow-gray-950" />
-                            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">Project 2</h3>
-                            <p className="text-gray-700 flex-grow dark:text-gray-300">Coming soon</p>
+                            <img src={rancidRhythms} alt="Project 2" className="w-full h-48 object-cover rounded-lg mb-4 shadow-xl border-2 border-black dark:border-purple-300 dark:shadow-gray-950" />
+                            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">Rancid Rhythms</h3>
+                            <p className="text-gray-700 flex-grow dark:text-gray-300">This application was created in collaboration with two other developers and myself. Rancid Rhythms is a social platform where users can rate and review their favorite albums. The home page provides the highest and lowest rated albums on the platform. Users are able to search for an album, see information about the album, and also see other users reviews of that album. Users have a profile page where they can keep track of all of the reviews they have left on related albums. This application was created using React, Node.JS, Express.js, PostgreSQL, Sequelize, TailwindCSS, and JWT-based Authentication. Rancid Rhythms also has some help from the MusicBrainz API and the iTunes API to give users the ablility to search for and hear a sample of any album! This applications live website's database has expired, I highly recommend running it locally by following the installation steps in the README. </p>
                             <div className="flex space-x-4 mt-auto">
-                                <a href="https://GitHub.com/AlecTaber" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                <a href="https://github.com/AlecTaber/rancid-rhythms" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                     GitHub Repository
                                 </a>
-                                <a href="https://GitHub.com/AlecTaber" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                <a href="https://rancid-rhythms-tnyn.onrender.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                     Live Website
                                 </a>
                             </div>
                         </li>
 
                         <li className="pb-4 flex flex-col h-full bg-white dark:bg-gray-900 rounded-lg shadow-lg p-4">
-                            <img src={construction} alt="Project 3" className="w-full h-48 object-cover rounded-lg mb-4 shadow-xl border-2 border-black dark:border-purple-300 dark:shadow-gray-950" />
-                            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">Project 3</h3>
-                            <p className="text-gray-700 flex-grow dark:text-gray-300">Coming soon</p>
+                            <img src={loopLab} alt="Project 3" className="w-full h-48 object-cover rounded-lg mb-4 shadow-xl border-2 border-black dark:border-purple-300 dark:shadow-gray-950" />
+                            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">LoopLab</h3>
+                            <p className="text-gray-700 flex-grow dark:text-gray-300">LoopLab is a unique and inovative social media platform created for people looking for ways to connect with people through media and art. This application was created by a fantastic team of developers who wanted to create something we actually wanted to use! This application was built with TypeScript, React and Tailwind for the frontend. The backend uses Node.js, Express.js, GraphQL, and Socket.io. The database we used for this app is MongoDB, alongside a 3rd party cloud storage called Cloudinary. LoopLab allows users to create flipbook style art and share it with other users on the platform. Users are able to leave likes and comments on other users Loops, as well as visit any users page by clicking on their user button. Every user also has their own profile page where they can see all of their Loops and see how many likes and comments each Loop has. This application is the accumulation of everything I have learned in my young developer career thus far. </p>
                             <div className="flex space-x-4 mt-auto">
-                                <a href="https://GitHub.com/AlecTaber" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                <a href="https://github.com/AlecTaber/LoopLab" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                     GitHub Repository
                                 </a>
-                                <a href="https://GitHub.com/AlecTaber" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                <a href="https://looplab.onrender.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                     Live Website
                                 </a>
                             </div>
@@ -182,6 +184,90 @@ const Project = ({ section }) => {
                             <span className="text-purple-900 dark:text-purple-300">• </span>
                             State Management
                         </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            NoSQL
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            Mongoose
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            MongoDB
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            MongoDB Atlas
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            MongoDB Compass
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            Render
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            Netlify
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            GraphQL
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            typeDefs & resolvers
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            GraphQL Sandbox
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            Queries & Mutations
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            JSON Web Tokens
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            Cypress
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            Test Driven Development
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            Vitest
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            Component & E2E Testing
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            Technical Design Documents
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            CI/CD
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            GitHub Actions
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            CircleCI
+                        </li>
+                        <li className="text-gray-700 dark:text-gray-300">
+                            <span className="text-purple-900 dark:text-purple-300">• </span>
+                            Python Fundementals
+                        </li>
                     </ul>
                 </section>
             );
@@ -191,7 +277,7 @@ const Project = ({ section }) => {
                 <h2 className="text-3xl font-bold mb-4 text-red-600">Error 404</h2>
                 <p className="text-gray-700">Page Not Found</p>
             </section>;
-    };
+    }
 };
 
 const ContactForm = () => {
