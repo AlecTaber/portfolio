@@ -4,7 +4,7 @@ import memoryGame from '../assets/images/Screenshot 2024-09-02 182026.png'
 import profile from '../assets/images/image0.jpeg';
 import rancidRhythms from '../assets/images/Screenshot 2024-09-24 181056.png';
 import loopLab from '../assets/images/Screenshot 2024-12-09 155154.png';
-import emailjs from 'emailjs/browser';
+import emailjs from 'emailjs-com';
 
 const Project = ({ section }) => {
     switch (section) {
@@ -83,8 +83,7 @@ const Project = ({ section }) => {
                 <section className="bg-gray-300 p-4 m-8 rounded-lg shadow-lg dark:bg-gray-800">
                     <h2 className="text-3xl font-bold p-4 text-gray-800 flex flex-col items-center dark:text-white">Contact</h2>
                     <p className="text-gray-700 pb-4 dark:text-gray-300">
-                        This form does not provide me with your inputted Name, Email, or Message yet. Please contact me via email at <a href="mailto:alectaber12@gmail.com" className="text-blue-600 hover:underline">
-                        alectaber12@gmail.com</a>.
+                        If you would like to get in touch with me, please fill out the form below and I will get back to you as soon as possible.
                     </p>
                     <ContactForm />
                 </section>
