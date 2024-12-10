@@ -29,7 +29,7 @@ const App = () => {
       <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <Navigation />
       <Routes>
-        <Route exact path="/" element={<Project section="about" />} />
+        <Route path="/" element={<Project section="about" />} />
         <Route path="/portfolio" element={<Project section="portfolio" />} />
         <Route path="/contact" element={<Project section="contact" />} />
         <Route path="/resume" element={<Project section="resume" />} />

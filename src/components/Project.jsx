@@ -5,6 +5,7 @@ import profile from '../assets/images/image0.jpeg';
 import rancidRhythms from '../assets/images/Screenshot 2024-09-24 181056.png';
 import loopLab from '../assets/images/Screenshot 2024-12-09 155154.png';
 import emailjs from 'emailjs-com';
+import { useEffect, useState } from 'react';
 
 const Project = ({ section }) => {
     switch (section) {
@@ -50,7 +51,7 @@ const Project = ({ section }) => {
                         <li className="pb-4 flex flex-col h-full bg-white dark:bg-gray-900 rounded-lg shadow-lg p-4">
                             <img src={rancidRhythms} alt="Project 2" className="w-full h-48 object-cover rounded-lg mb-4 shadow-xl border-2 border-black dark:border-purple-300 dark:shadow-gray-950" />
                             <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">Rancid Rhythms</h3>
-                            <p className="text-gray-700 flex-grow dark:text-gray-300">This application was created in collaboration with two other developers and myself. Rancid Rhythms is a social platform where users can rate and review their favorite albums. The home page provides the highest and lowest rated albums on the platform. Users are able to search for an album, see information about the album, and also see other users reviews of that album. Users have a profile page where they can keep track of all of the reviews they have left on related albums. This application was created using React, Node.JS, Express.js, PostgreSQL, Sequelize, TailwindCSS, and JWT-based Authentication. Rancid Rhythms also has some help from the MusicBrainz API and the iTunes API to give users the ablility to search for and hear a sample of any album! This applications live website's database has expired, I highly recommend running it locally by following the installation steps in the README. </p>
+                            <p className="text-gray-700 flex-grow dark:text-gray-300">This application was created in collaboration with two other developers and myself. Rancid Rhythms is a social platform where users can rate and review their favorite albums. The home page provides the highest and lowest rated albums on the platform. Users are able to search for an album, see information about the album, and also see other users reviews of that album. Users have a profile page where they can keep track of all of the reviews they have left on related albums. This application was created using React, Node.JS, Express.js, PostgreSQL, Sequelize, TailwindCSS, and JWT-based Authentication. Rancid Rhythms also has some help from the MusicBrainz API and the iTunes API to give users the ablility to search for and hear a sample of any album! This applications live website`&apos;`s database has expired, I highly recommend running it locally by following the installation steps in the README. </p>
                             <div className="flex space-x-4 mt-auto">
                                 <a href="https://github.com/AlecTaber/rancid-rhythms" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
                                     GitHub Repository
@@ -281,15 +282,26 @@ const Project = ({ section }) => {
 };
 
 const ContactForm = () => {
-    const [formData, setFormData] = React.useState({
+    const [formData, setFormData] = useState({
         name: '',
         email: '',
-        message: ''
+        message: '',
     });
 
-    const [errors, setErrors] = React.useState({});
-    const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
+    // Initialize EmailJS
+    useEffect(() => {
+        const publicKey = import.meta.env.VITE_REACT_APP_EMAILJS_USER_ID;
+        if (publicKey) {
+            emailjs.init(publicKey);
+        } else {
+            console.error('EmailJS public key not found. Please check your environment variables.');
+        }
+    }, []);
+
+    // Email validation
     const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
     const handleBlur = (field) => {
@@ -307,18 +319,21 @@ const ContactForm = () => {
     const handleChange = (e) => {
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
         });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Check for errors
+        // Validate fields before submitting
         const newErrors = {};
         if (!formData.name) newErrors.name = 'This field is required';
-        if (!formData.email) newErrors.email = 'This field is required';
-        else if (!validateEmail(formData.email)) newErrors.email = 'Please enter a valid email address';
+        if (!formData.email) {
+            newErrors.email = 'This field is required';
+        } else if (!validateEmail(formData.email)) {
+            newErrors.email = 'Please enter a valid email address';
+        }
         if (!formData.message) newErrors.message = 'This field is required';
 
         if (Object.keys(newErrors).length > 0) {
@@ -328,36 +343,42 @@ const ContactForm = () => {
 
         setIsSubmitting(true);
 
-        // Send email with EmailJS
-        emailjs.send(
-            process.env.REACT_APP_EMAILJS_SERVICE_ID,
-            process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-            formData,
-            process.env.REACT_APP_EMAILJS_USER_ID
-        )
-        .then(
-            () => {
-                alert('Message sent successfully!');
-                setFormData({ name: '', email: '', message: '' });
-                setIsSubmitting(false);
-            },
-            (error) => {
-                console.error('EmailJS error:', error);
-                alert('Failed to send the message. Please try again later.');
-                setIsSubmitting(false);
-            }
-        );
+        const serviceId = import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID;
+        const templateId = import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID;
+        const publicKey = import.meta.env.VITE_REACT_APP_EMAILJS_USER_ID;
+
+        emailjs
+            .send(serviceId, templateId, formData, publicKey)
+            .then(
+                () => {
+                    alert('Message sent successfully!');
+                    setFormData({ name: '', email: '', message: '' });
+                    setIsSubmitting(false);
+                },
+                (error) => {
+                    console.error('EmailJS error:', error);
+                    alert('Failed to send the message. Please try again later.');
+                    setIsSubmitting(false);
+                }
+            );
     };
 
     return (
         <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
+                    Name
+                </label>
                 <input
                     type="text"
                     id="name"
                     name="name"
-                    className={`mt-1 p-2 block w-full shadow-md sm:text-sm border dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-900 ${errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-900'} rounded-md`}
+                    className={`mt-1 p-2 block w-full shadow-md sm:text-sm border dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-900 ${
+                        errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-900'
+                    } rounded-md`}
                     value={formData.name}
                     onChange={handleChange}
                     onBlur={() => handleBlur('name')}
@@ -365,12 +386,19 @@ const ContactForm = () => {
                 {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
             </div>
             <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+                <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
+                    Email
+                </label>
                 <input
                     type="email"
                     id="email"
                     name="email"
-                    className={`mt-1 p-2 block w-full shadow-md sm:text-sm border dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-900 ${errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-900'} rounded-md`}
+                    className={`mt-1 p-2 block w-full shadow-md sm:text-sm border dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-900 ${
+                        errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-900'
+                    } rounded-md`}
                     value={formData.email}
                     onChange={handleChange}
                     onBlur={() => handleBlur('email')}
@@ -378,11 +406,18 @@ const ContactForm = () => {
                 {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
             </div>
             <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >
+                    Message
+                </label>
                 <textarea
                     id="message"
                     name="message"
-                    className={`mt-1 p-2 block w-full shadow-md sm:text-sm border h-40 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-900 ${errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-900'} rounded-md`}
+                    className={`mt-1 p-2 block w-full shadow-md sm:text-sm border h-40 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-900 ${
+                        errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-900'
+                    } rounded-md`}
                     value={formData.message}
                     onChange={handleChange}
                     onBlur={() => handleBlur('message')}
@@ -391,7 +426,9 @@ const ContactForm = () => {
             </div>
             <button
                 type="submit"
-                className={`bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 ${
+                    isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
                 disabled={isSubmitting}
             >
                 {isSubmitting ? 'Sending...' : 'Submit'}
