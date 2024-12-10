@@ -1,9 +1,10 @@
 import React from 'react';
-import construction from '../assets/images/construction.jpg';
+// import construction from '../assets/images/construction.jpg';
 import memoryGame from '../assets/images/Screenshot 2024-09-02 182026.png'
 import profile from '../assets/images/image0.jpeg';
 import rancidRhythms from '../assets/images/Screenshot 2024-09-24 181056.png';
 import loopLab from '../assets/images/Screenshot 2024-12-09 155154.png';
+import emailjs from 'emailjs/browser';
 
 const Project = ({ section }) => {
     switch (section) {
@@ -288,11 +289,9 @@ const ContactForm = () => {
     });
 
     const [errors, setErrors] = React.useState({});
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-    const validateEmail = (email) => {
-        const re = /\S+@\S+\.\S+/;
-        return re.test(email);
-    };
+    const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
     const handleBlur = (field) => {
         const newErrors = { ...errors };
@@ -313,8 +312,46 @@ const ContactForm = () => {
         });
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Check for errors
+        const newErrors = {};
+        if (!formData.name) newErrors.name = 'This field is required';
+        if (!formData.email) newErrors.email = 'This field is required';
+        else if (!validateEmail(formData.email)) newErrors.email = 'Please enter a valid email address';
+        if (!formData.message) newErrors.message = 'This field is required';
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        // Send email with EmailJS
+        emailjs.send(
+            process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+            formData,
+            process.env.REACT_APP_EMAILJS_USER_ID
+        )
+        .then(
+            () => {
+                alert('Message sent successfully!');
+                setFormData({ name: '', email: '', message: '' });
+                setIsSubmitting(false);
+            },
+            (error) => {
+                console.error('EmailJS error:', error);
+                alert('Failed to send the message. Please try again later.');
+                setIsSubmitting(false);
+            }
+        );
+    };
+
     return (
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
                 <input
@@ -329,12 +366,12 @@ const ContactForm = () => {
                 {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
             </div>
             <div>
-                <label htmlFor="email" className="block text-gray-700 dark:text-gray-300">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
                 <input
                     type="email"
                     id="email"
                     name="email"
-                    className={`mt-1 p-2 block w-full shadow-md sm:text-sm border dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-900 ${errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-900'} rounded-md`}
+                    className={`mt-1 p-2 block w-full shadow-md sm:text-sm border dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-900 ${errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-900'} rounded-md`}
                     value={formData.email}
                     onChange={handleChange}
                     onBlur={() => handleBlur('email')}
@@ -342,11 +379,11 @@ const ContactForm = () => {
                 {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
             </div>
             <div>
-                <label htmlFor="message" className="block text-gray-700 dark:text-gray-300">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
                 <textarea
                     id="message"
                     name="message"
-                    className={`mt-1 p-2 block w-full shadow-md sm:text-sm border h-40 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-900 ${errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-900'} rounded-md`}
+                    className={`mt-1 p-2 block w-full shadow-md sm:text-sm border h-40 dark:bg-gray-900 dark:text-gray-300 dark:shadow-gray-900 ${errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-900'} rounded-md`}
                     value={formData.message}
                     onChange={handleChange}
                     onBlur={() => handleBlur('message')}
@@ -355,9 +392,10 @@ const ContactForm = () => {
             </div>
             <button
                 type="submit"
-                className="bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700"
+                className={`bg-blue-600 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-700 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                disabled={isSubmitting}
             >
-                Submit
+                {isSubmitting ? 'Sending...' : 'Submit'}
             </button>
         </form>
     );
